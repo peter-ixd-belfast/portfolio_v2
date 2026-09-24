@@ -220,6 +220,10 @@ a:focus-visible {
   font-size: var(--text-small);
   font-weight: 600;
 }
+
+#experience{
+  color: var(--color-accent-contrast);
+}
 /* --------------------------------------------------------------------------
    6. CALL-TO-ACTION BUTTON
    Used for "View All Projects".
