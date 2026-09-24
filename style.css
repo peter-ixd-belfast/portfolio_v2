@@ -25,9 +25,9 @@
    -------------------------------------------------------------------------- */
 :root {
   /* ---- Colours (PLACEHOLDERS) ---- */
-  --color-bg: #E0E0E2;            /* Main page background  Alabaster Grey*/
-  --color-bg-alt: #9d9d9e;        /* Alternate section background (Experience) 30% Darker*/
-  --color-surface: #e8e8e9;       /* Card background */
+  --color-bg: #E8EBF7;            /* Main page background */
+  --color-bg-alt: #c5c8d2;        /* Alternate section background (Experience) 15% Darker*/
+  --color-surface: #ebeef8;       /* Card background */
   --color-text: #18181b;          /* Primary text colour */
   --color-text-muted: #52525b;    /* Secondary / body text colour */
   --color-border: #e4e4e7;        /* Hairlines and card borders */
