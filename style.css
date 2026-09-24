@@ -25,13 +25,13 @@
    -------------------------------------------------------------------------- */
 :root {
   /* ---- Colours (PLACEHOLDERS) ---- */
-  --color-bg: #ffffff;            /* Main page background */
-  --color-bg-alt: #f4f4f5;        /* Alternate section background (Experience) */
+  --color-bg: #E0E0E2;            /* Main page background  Alabaster Grey*/
+  --color-bg-alt: #721817;        /* Alternate section background (Experience) Wine Red*/
   --color-surface: #ffffff;       /* Card background */
   --color-text: #18181b;          /* Primary text colour */
   --color-text-muted: #52525b;    /* Secondary / body text colour */
   --color-border: #e4e4e7;        /* Hairlines and card borders */
-  --color-accent: #18181b;        /* Buttons and links */
+  --color-accent: #0B6E4F;        /* Buttons and links  Emerald Green*/
   --color-accent-contrast: #ffffff; /* Text shown on top of the accent colour */
   --color-footer-bg: #18181b;     /* Footer background */
   --color-footer-text: #d4d4d8;   /* Footer text */
