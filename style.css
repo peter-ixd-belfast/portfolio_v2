@@ -26,7 +26,7 @@
 :root {
   /* ---- Colours (PLACEHOLDERS) ---- */
   --color-bg: #E0E0E2;            /* Main page background  Alabaster Grey*/
-  --color-bg-alt: #721817;        /* Alternate section background (Experience) Wine Red*/
+  --color-bg-alt: #9d9d9e;        /* Alternate section background (Experience) 30% Darker*/
   --color-surface: #e8e8e9;       /* Card background */
   --color-text: #18181b;          /* Primary text colour */
   --color-text-muted: #52525b;    /* Secondary / body text colour */
@@ -221,9 +221,6 @@ a:focus-visible {
   font-weight: 600;
 }
 
-#experience{
-  color: var(--color-accent-contrast);
-}
 /* --------------------------------------------------------------------------
    6. CALL-TO-ACTION BUTTON
    Used for "View All Projects".
