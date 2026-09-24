@@ -1,0 +1,382 @@
+/* ==========================================================================
+   PETER McALERNON — DESIGN PORTFOLIO STYLESHEET
+   --------------------------------------------------------------------------
+   HOW TO USE THIS FILE
+   1. Change colours, fonts, spacing, and radius in the ":root" block
+      (section 1). Every other rule reads from these variables, so one edit
+      updates the whole site.
+   2. To change fonts, swap the Google Fonts @import below AND the
+      --font-heading / --font-body variables.
+   3. Each section of the page has its own block below, in the same order
+      as the page itself.
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   0. FONT IMPORT (PLACEHOLDER)
+   Replace this URL with any Google Fonts (or other) stylesheet link.
+   Remember to update --font-heading and --font-body below to match.
+   -------------------------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* --------------------------------------------------------------------------
+   1. DESIGN TOKENS (EDIT ME FIRST)
+   All colours, fonts, and sizes live here as CSS custom properties.
+   -------------------------------------------------------------------------- */
+:root {
+  /* ---- Colours (PLACEHOLDERS) ---- */
+  --color-bg: #ffffff;            /* Main page background */
+  --color-bg-alt: #f4f4f5;        /* Alternate section background (Experience) */
+  --color-surface: #ffffff;       /* Card background */
+  --color-text: #18181b;          /* Primary text colour */
+  --color-text-muted: #52525b;    /* Secondary / body text colour */
+  --color-border: #e4e4e7;        /* Hairlines and card borders */
+  --color-accent: #18181b;        /* Buttons and links */
+  --color-accent-contrast: #ffffff; /* Text shown on top of the accent colour */
+  --color-footer-bg: #18181b;     /* Footer background */
+  --color-footer-text: #d4d4d8;   /* Footer text */
+  /* ---- Typography (PLACEHOLDERS) ---- */
+  --font-heading: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* Fluid font sizes: clamp(min, preferred, max) scales with screen width */
+  --text-hero: clamp(2.75rem, 7vw, 5.5rem);   /* Your name */
+  --text-hero-sub: clamp(1.125rem, 2vw, 1.5rem); /* Job title */
+  --text-statement: clamp(1.5rem, 3vw, 2.5rem);  /* Right-side hero phrase */
+  --text-h2: clamp(1.75rem, 3.5vw, 2.5rem);   /* Section headings */
+  --text-h3: 1.25rem;                         /* Card titles */
+  --text-body: 1rem;                          /* Paragraphs */
+  --text-small: 0.875rem;                     /* Footer, captions */
+  /* ---- Layout ---- */
+  --container-width: 1200px;      /* Max width of page content */
+  --gutter: clamp(1.25rem, 4vw, 2.5rem); /* Side padding on the page */
+  --section-space: clamp(4rem, 10vw, 8rem); /* Vertical space between sections */
+  --radius: 12px;                 /* Corner rounding for cards and buttons */
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --hover-scale: 1.03;            /* How much cards grow on hover */
+}
+/* --------------------------------------------------------------------------
+   2. BASE / RESET
+   Sensible defaults so the site looks consistent in every browser.
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+h1, h2, h3, p {
+  margin: 0;
+}
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+a {
+  color: inherit;
+}
+/* Visible keyboard focus for accessibility */
+a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+/* --------------------------------------------------------------------------
+   3. SHARED LAYOUT HELPERS
+   .container centres content; .section adds vertical spacing.
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+.section {
+  padding: var(--section-space) 0;
+}
+/* Alternate background, used on the Experience section */
+.section--alt {
+  background: var(--color-bg-alt);
+}
+.section__heading {
+  font-size: var(--text-h2);
+  margin-bottom: 2.5rem;
+}
+/* --------------------------------------------------------------------------
+   4. HERO / HEADER
+   Full viewport height, two columns vertically centred.
+   Stacks into one column on mobile (see media query in section 10).
+   -------------------------------------------------------------------------- */
+.hero {
+  min-height: 100vh;          /* Fallback for older browsers */
+  min-height: 100svh;         /* Accounts for mobile browser toolbars */
+  display: flex;
+  align-items: center;        /* Vertically centres the content */
+  border-bottom: 1px solid var(--color-border);
+}
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* Left side slightly wider */
+  gap: 4rem;
+  align-items: center;        /* Vertically aligns left and right sides */
+}
+/* Left side: name */
+.hero__name {
+  font-size: var(--text-hero);
+  font-weight: 700;
+}
+/* Left side: job title */
+.hero__title {
+  margin-top: 1rem;
+  font-size: var(--text-hero-sub);
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+/* Right side: statement */
+.hero__statement {
+  font-family: var(--font-heading);
+  font-size: var(--text-statement);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  padding-left: 2rem;
+  border-left: 2px solid var(--color-text); /* Vertical rule; delete to remove */
+}
+/* --------------------------------------------------------------------------
+   5. CARD GRID + CARDS
+   Shared by BOTH the Projects and Experience sections.
+   The whole card is an <a> tag, so the entire card is clickable.
+   -------------------------------------------------------------------------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+  gap: 2rem;
+}
+/* Two-column variant for the Experience section (cards stay identical) */
+.card-grid--two {
+  grid-template-columns: repeat(2, 1fr);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  /* The hover animation: only transform and shadow are animated */
+  transition:
+    transform 250ms var(--ease-out),
+    box-shadow 250ms var(--ease-out);
+}
+/* HOVER EFFECT: card grows slightly. Change --hover-scale in :root */
+.card:hover,
+.card:focus-visible {
+  transform: scale(var(--hover-scale));
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+.card__image {
+  width: 100%;
+  aspect-ratio: 16 / 10;      /* Keeps every image the same shape */
+  object-fit: cover;
+  background: var(--color-bg-alt);
+}
+.card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.5rem;
+}
+.card__title {
+  font-size: var(--text-h3);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.card__text {
+  color: var(--color-text-muted);
+}
+/* "Read case study" prompt, pinned to the card bottom so cards align */
+.card__link-label {
+  margin-top: auto;
+  padding-top: 1.25rem;
+  font-size: var(--text-small);
+  font-weight: 600;
+}
+/* --------------------------------------------------------------------------
+   6. CALL-TO-ACTION BUTTON
+   Used for "View All Projects".
+   -------------------------------------------------------------------------- */
+.cta-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5rem;
+}
+.button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: var(--radius);
+  transition:
+    opacity 150ms var(--ease-out),
+    transform 150ms var(--ease-out);
+}
+.button:hover {
+  opacity: 0.85;
+}
+.button:active {
+  transform: scale(0.97);
+}
+/* --------------------------------------------------------------------------
+   7. ABOUT ME
+   Two columns: text on the left, circular photo on the right.
+   -------------------------------------------------------------------------- */
+.about__inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.about__text p {
+  color: var(--color-text-muted);
+  font-size: 1.125rem;
+  max-width: 60ch;            /* Keeps lines a comfortable reading length */
+}
+.about__text p + p {
+  margin-top: 1rem;
+}
+/* PERFECT CIRCLE: equal width/height via aspect-ratio + 50% radius */
+.about__photo {
+  width: 100%;
+  max-width: 360px;           /* Change to resize the photo */
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  justify-self: center;
+  border: 1px solid var(--color-border);
+}
+/* --------------------------------------------------------------------------
+   8. FOOTER
+   -------------------------------------------------------------------------- */
+.footer {
+  background: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  padding: 4rem 0 2rem;
+  font-size: var(--text-small);
+}
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+.footer__heading {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+.footer__contact p + p {
+  margin-top: 0.25rem;
+}
+.footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.footer__links a {
+  text-decoration: none;
+  transition: color 150ms var(--ease-out);
+}
+.footer__links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.footer__bottom {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+/* --------------------------------------------------------------------------
+   9. REDUCED MOTION
+   Turns off animation for visitors who have asked their device for less motion.
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .card,
+  .button { transition: none; }
+  .card:hover,
+  .card:focus-visible { transform: none; }
+}
+/* --------------------------------------------------------------------------
+   10. RESPONSIVE BREAKPOINTS
+   Tablet (≤ 960px), smartphone (≤ 767px) and small phone (≤ 640px).
+   -------------------------------------------------------------------------- */
+
+/* Tablet */
+@media (max-width: 960px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Smartphones (≤ 767px) — covers large phones and phones in landscape.
+   Change 767px here to adjust when the Hero and Projects go single column. */
+@media (max-width: 767px) {
+  /* HERO: single column — name + title on top, statement below */
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  /* Divider switches from vertical (left edge) to horizontal (top edge)
+     now that the columns are stacked */
+  .hero__statement {
+    padding-left: 0;
+    padding-top: 2rem;
+    border-left: none;
+    border-top: 2px solid var(--color-text);
+  }
+  /* PROJECTS (and Experience): cards stack in a single column */
+  .card-grid,
+  .card-grid--two {
+    grid-template-columns: 1fr;
+  }
+}
+/* Small phones (≤ 640px) */
+@media (max-width: 640px) {
+  /* About stacks: photo appears above the text */
+  .about__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .about__photo {
+    order: -1;                /* Delete this line to put the photo below */
+    max-width: 240px;
+  }
+  .footer__inner {
+    flex-direction: column;
+  }
+}

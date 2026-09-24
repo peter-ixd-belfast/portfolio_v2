@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  PETER McALERNON — DESIGN PORTFOLIO
+  ----------------------------------------------------------------------------
+  EDITING GUIDE
+  - Copy: replace any text between tags (look for "PLACEHOLDER" comments).
+  - Links: replace every href="#" / "case-study-*.html" with your real URLs.
+  - Images: replace every src="https://placehold.co/..." with your image path
+    (e.g. src="images/project-1.jpg") and update the alt text to describe it.
+  - Colours & fonts: edit the :root block at the top of style.css.
+  ============================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Makes the layout scale correctly on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- PLACEHOLDER: browser tab title and search engine description -->
+  <title>Peter McAlernon — UX &amp; Product Designer</title>
+  <meta name="description" content="Portfolio of Peter McAlernon, UX & Product Designer." />
+
+  <!-- Link to the stylesheet (keep style.css in the same folder) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ======================================================================
+       1. HERO / HEADER — full screen height, two sides
+       ====================================================================== -->
+  <header class="hero">
+    <div class="container hero__inner">
+
+      <!-- LEFT SIDE: name and job title -->
+      <div class="hero__left">
+        <h1 class="hero__name">Peter McAlernon</h1>
+        <p class="hero__title">UX &amp; Product Designer</p>
+      </div>
+
+      <!-- RIGHT SIDE: statement -->
+      <div class="hero__right">
+        <p class="hero__statement">Crafting creative solutions to complex user problems</p>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ====================================================================
+         2. PROJECTS — 3 clickable cards + "View All Projects" button
+         To add a card: copy one whole <a class="card">…</a> block.
+         ==================================================================== -->
+    <section class="section" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <!-- PLACEHOLDER: section heading -->
+        <h2 class="section__heading" id="projects-heading">Selected Projects</h2>
+
+        <div class="card-grid">
+
+          <!-- PROJECT CARD 1 — the whole card links to the case study -->
+          <a class="card" href="case-study-1.html"> <!-- PLACEHOLDER link -->
+            <img class="card__image" src="https://placehold.co/800x500?text=Project+1" alt="Placeholder image for Project One" />
+            <div class="card__body">
+              <h3 class="card__title">Project Title One</h3> <!-- PLACEHOLDER -->
+              <p class="card__text">A short description of the project, the problem it solved, and your role.</p> <!-- PLACEHOLDER -->
+              <span class="card__link-label">Read case study →</span>
+            </div>
+          </a>
+
+          <!-- PROJECT CARD 2 -->
+          <a class="card" href="case-study-2.html"> <!-- PLACEHOLDER link -->
+            <img class="card__image" src="https://placehold.co/800x500?text=Project+2" alt="Placeholder image for Project Two" />
+            <div class="card__body">
+              <h3 class="card__title">Project Title Two</h3> <!-- PLACEHOLDER -->
+              <p class="card__text">A short description of the project, the problem it solved, and your role.</p> <!-- PLACEHOLDER -->
+              <span class="card__link-label">Read case study →</span>
+            </div>
+          </a>
+
+          <!-- PROJECT CARD 3 -->
+          <a class="card" href="case-study-3.html"> <!-- PLACEHOLDER link -->
+            <img class="card__image" src="https://placehold.co/800x500?text=Project+3" alt="Placeholder image for Project Three" />
+            <div class="card__body">
+              <h3 class="card__title">Project Title Three</h3> <!-- PLACEHOLDER -->
+              <p class="card__text">A short description of the project, the problem it solved, and your role.</p> <!-- PLACEHOLDER -->
+              <span class="card__link-label">Read case study →</span>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- CALL TO ACTION: links to your full projects page -->
+        <div class="cta-wrapper">
+          <a class="button" href="projects.html">View All Projects</a> <!-- PLACEHOLDER link -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         3. EXPERIENCE — 2 cards using the SAME card classes as Projects
+         (no button in this section)
+         ==================================================================== -->
+    <section class="section section--alt" id="experience" aria-labelledby="experience-heading">
+      <div class="container">
+        <h2 class="section__heading" id="experience-heading">Experience</h2> <!-- PLACEHOLDER -->
+
+        <!-- "card-grid--two" only changes the column count; cards are identical -->
+        <div class="card-grid card-grid--two">
+
+          <!-- EXPERIENCE CARD 1 -->
+          <a class="card" href="#"> <!-- PLACEHOLDER link -->
+            <img class="card__image" src="https://placehold.co/800x500?text=Company+1" alt="Placeholder image for Company One" />
+            <div class="card__body">
+              <h3 class="card__title">Senior Product Designer, Company One</h3> <!-- PLACEHOLDER -->
+              <p class="card__text">2022 – Present. A brief summary of your responsibilities and key achievements in this role.</p> <!-- PLACEHOLDER -->
+              <span class="card__link-label">Learn more →</span>
+            </div>
+          </a>
+
+          <!-- EXPERIENCE CARD 2 -->
+          <a class="card" href="#"> <!-- PLACEHOLDER link -->
+            <img class="card__image" src="https://placehold.co/800x500?text=Company+2" alt="Placeholder image for Company Two" />
+            <div class="card__body">
+              <h3 class="card__title">UX Designer, Company Two</h3> <!-- PLACEHOLDER -->
+              <p class="card__text">2019 – 2022. A brief summary of your responsibilities and key achievements in this role.</p> <!-- PLACEHOLDER -->
+              <span class="card__link-label">Learn more →</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. ABOUT ME — text left, circular photo right (stacks on mobile)
+         ==================================================================== -->
+    <section class="section" id="about" aria-labelledby="about-heading">
+      <div class="container about__inner">
+
+        <!-- LEFT SIDE: text -->
+        <div class="about__text">
+          <h2 class="section__heading" id="about-heading">About Me</h2>
+          <!-- PLACEHOLDER: replace with your bio -->
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+        </div>
+
+        <!-- RIGHT SIDE: profile photo (circle shape comes from style.css) -->
+        <img class="about__photo" src="https://placehold.co/600x600?text=Photo" alt="Portrait of Peter McAlernon" /> <!-- PLACEHOLDER image -->
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       5. FOOTER — contact info and links
+       ====================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+
+        <!-- Contact details -->
+        <div class="footer__contact">
+          <p class="footer__heading">Get in touch</p>
+          <p><a href="mailto:hello@example.com">hello@example.com</a></p> <!-- PLACEHOLDER -->
+          <p>+44 (0)000 000 0000</p> <!-- PLACEHOLDER -->
+          <p>City, Country</p> <!-- PLACEHOLDER -->
+        </div>
+
+        <!-- Links (add or remove <li> items as needed) -->
+        <nav aria-label="Footer">
+          <p class="footer__heading">Elsewhere</p>
+          <ul class="footer__links">
+            <li><a href="#">LinkedIn</a></li> <!-- PLACEHOLDER -->
+            <li><a href="#">Dribbble</a></li> <!-- PLACEHOLDER -->
+            <li><a href="#">Behance</a></li>  <!-- PLACEHOLDER -->
+            <li><a href="#">Resume</a></li>   <!-- PLACEHOLDER -->
+          </ul>
+        </nav>
+
+      </div>
+
+      <!-- Copyright line -->
+      <div class="footer__bottom">
+        <p>&copy; 2026 Peter McAlernon. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
