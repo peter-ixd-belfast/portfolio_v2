@@ -197,7 +197,7 @@ a:focus-visible {
   width: 100%;
   aspect-ratio: 16 / 10;      /* Keeps every image the same shape */
   object-fit: cover;
-  background: var(--color-bg-alt);
+  background: var(--color-surface);
 }
 .card__body {
   display: flex;
