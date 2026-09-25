@@ -146,10 +146,8 @@ a:focus-visible {
 /* Left side: name */
 .hero__name {
   font-size: var(--text-hero);
-  font-weight: 700;
-}
-.hero__name{
   color: var(--color-text-alt);
+  font-weight: 700;
 }
 /* Left side: job title */
 .hero__title {
