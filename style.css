@@ -28,8 +28,8 @@
 :root {
   /* ---- Colours (PLACEHOLDERS) ---- */
   --color-bg: #E8EBF7;            /* Main page background */
-  --color-bg-alt: #c5c8d2;        /* Alternate section background (Experience) 15% Darker*/
-  --color-surface: #ebeef8;       /* Card background */
+  --color-bg-alt: #707EB8;        /* Alternate section background (Experience) */
+  --color-surface: #F7F4E9;       /* Card background */
   --color-text: #18181b;          /* Primary text colour */
   --color-text-muted: #52525b;    /* Secondary / body text colour */
   --color-border: #e4e4e7;        /* Hairlines and card borders */
@@ -43,7 +43,7 @@
    --font-special1: "Story Script", system-ui, -apple-system, "Segoe UI", sans-serif;
    --font-special2: "Turret Road", system-ui, -apple-system, "Segoe UI", sans-serif;
   /* Fluid font sizes: clamp(min, preferred, max) scales with screen width */
-  --text-hero: clamp(2.75rem, 7vw, 5.5rem);   /* Your name */
+  --text-hero: clamp(2.75rem, 7vw, 5.5rem);   /* Your name */ 
   --text-hero-sub: clamp(1.125rem, 2vw, 1.5rem); /* Job title */
   --text-statement: clamp(1.5rem, 3vw, 2.5rem);  /* Right-side hero phrase */
   --text-statement-special: clamp(2rem, 4.5vw, 5rem);  /* Creative and Complex*/
