@@ -46,7 +46,7 @@
   --text-hero: clamp(2.75rem, 7vw, 5.5rem);   /* Your name */ 
   --text-hero-sub: clamp(1.125rem, 2vw, 1.5rem); /* Job title */
   --text-statement: clamp(1.5rem, 3vw, 2.5rem);  /* Right-side hero phrase */
-  --text-statement-special: clamp(2rem, 4.5vw, 5rem);  /* Creative and Complex*/
+  --text-statement-special: clamp(2rem, 4vw, 4rem);  /* Creative and Complex*/
   --text-h2: clamp(1.75rem, 3.5vw, 2.5rem);   /* Section headings */
   --text-h3: 1.25rem;                         /* Card titles */
   --text-body: 1rem;                          /* Paragraphs */
