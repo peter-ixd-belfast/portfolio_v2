@@ -40,6 +40,8 @@
   /* ---- Typography (PLACEHOLDERS) ---- */
   --font-heading: "Urbanist", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+   --font-special1: "Story Script", system-ui, -apple-system, "Segoe UI", sans-serif;
+   --font-special2: "Turret Road", system-ui, -apple-system, "Segoe UI", sans-serif;
   /* Fluid font sizes: clamp(min, preferred, max) scales with screen width */
   --text-hero: clamp(2.75rem, 7vw, 5.5rem);   /* Your name */
   --text-hero-sub: clamp(1.125rem, 2vw, 1.5rem); /* Job title */
@@ -162,11 +164,11 @@ a:focus-visible {
   border-left: 2px solid var(--color-text); /* Vertical rule; delete to remove */
 }
 .word-creative {
-  font-family: 'Story-Script';
+  font-family: var(--font-special1);
 font-size: var(--text-statement-special);
 }
 .word-complex {
-  font-family: "Turret-Road";
+  font-family: var(--font-special2);
   font-size: var(--text-statement-special);
 
 }
