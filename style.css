@@ -177,6 +177,102 @@ font-size: var(--text-statement-special);
 
 }
 /* --------------------------------------------------------------------------
+   4b. HERO STICKY NOTE
+   A handwritten note under the statement. Beside it, OUTSIDE the note, a
+   hand-drawn arrow is drawn stroke-by-stroke on page load, then gently
+   nudges downward. The note links to #projects.
+   - Change the text in index.html (".sticky-note__text").
+   - Change colours with --color-note / --color-note-ink in :root.
+   - Change the tilt with the rotate() value below.
+   -------------------------------------------------------------------------- */
+
+/* The right column is the positioning anchor for the note */
+.hero__right {
+  position: relative;
+}
+/* Wrapper that holds the note and the arrow side by side.
+   On desktop it's positioned absolutely, hanging just below the statement,
+   so it doesn't count towards the column's height. This keeps the statement
+   vertically centred level with your name and job title on the left.
+   (On smartphones it returns to normal flow — see section 10.) */
+.hero-note {
+  position: absolute;
+  top: 100%;                  /* Starts directly below the statement */
+  left: 0;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 2.5rem;         /* Gap between statement and note */
+  margin-left: 2rem;          /* Lines the note up with the statement text */
+}
+.sticky-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 170px;
+  min-height: 150px;
+  padding: 1.25rem 1rem;
+  background: var(--color-note);
+  color: var(--color-note-ink);
+  text-decoration: none;
+  border-radius: 2px;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.08),
+    0 10px 20px -8px rgba(0, 0, 0, 0.25);
+  transform: rotate(-3deg);   /* Slight tilt so it feels stuck on by hand */
+  transition: transform 200ms var(--ease-out);
+}
+/* Straightens slightly on hover to hint that it's clickable */
+.sticky-note:hover {
+  transform: rotate(-1deg) translateY(-2px);
+}
+.sticky-note__text {
+  font-family: var(--font-hand);
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1.05;
+  text-align: center;
+}
+/* THE ARROW (sits outside the note, to its right, curling downward) */
+.hero-arrow {
+  flex-shrink: 0;
+  width: 96px;
+  height: 140px;
+  margin-top: 3.5rem;         /* Starts roughly level with the note's middle */
+  margin-left: -0.25rem;
+  color: var(--color-text);   /* Arrow ink colour */
+  overflow: visible;
+  animation: arrow-nudge 1.6s ease-in-out 2.2s infinite; /* Starts after drawing */
+}
+.hero-arrow path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  /* PEN-DRAW EFFECT
+     Each path has pathLength="1". A dash pattern of "1 2" with an offset of
+     1.02 hides the whole line; animating the offset to 0 reveals it from the
+     start of the path to the end, like a pen moving. */
+  stroke-dasharray: 1 2;
+  stroke-dashoffset: 1.02;
+  opacity: 0;
+}
+/* Stroke order + timing: shaft first, then each side of the arrowhead.
+   (Full animation declarations here so nothing overrides the timing.) */
+.hero-arrow .hero-arrow__shaft  { animation: arrow-draw 1100ms ease-in-out 500ms both; }
+.hero-arrow .hero-arrow__head-1 { animation: arrow-draw 240ms ease-out 1650ms both; }
+.hero-arrow .hero-arrow__head-2 { animation: arrow-draw 240ms ease-out 1950ms both; }
+@keyframes arrow-draw {
+  0%   { stroke-dashoffset: 1.02; opacity: 0; }
+  1%   { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 1; }
+}
+@keyframes arrow-nudge {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
+/* --------------------------------------------------------------------------
    5. CARD GRID + CARDS
    Shared by BOTH the Projects and Experience sections.
    The whole card is an <a> tag, so the entire card is clickable.
@@ -377,6 +473,11 @@ font-size: var(--text-statement-special);
     padding-top: 2rem;
     border-left: none;
     border-top: 2px solid var(--color-text);
+  }
+   /* Sticky note: remove the desktop indent so it aligns with the text */
+  .hero-note {
+    position: static;         /* Back in normal flow when stacked */
+    margin-left: 0;
   }
   /* PROJECTS (and Experience): cards stack in a single column */
   .card-grid,
