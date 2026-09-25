@@ -28,10 +28,11 @@
 :root {
   /* ---- Colours (PLACEHOLDERS) ---- */
   --color-bg: #E8EBF7;            /* Main page background */
-  --color-bg-alt: #707EB8;        /* Alternate section background (Experience) */
+  --color-bg-alt: #0F1B4D;        /* Alternate section background (Experience) */
   --color-surface: #F7F2E9;       /* Card background */
   --color-text: #18181b;          /* Primary text colour */
   --color-text-muted: #000A33;    /* Secondary / body text colour */
+  --color-text-alt: #ffffff;    /* text colour on dark background */
   --color-border: #e4e4e7;        /* Hairlines and card borders */
   --color-accent: #2B3A78;        /* Buttons and links  Purple*/
   --color-accent-contrast: #ffffff; /* Text shown on top of the accent colour */
@@ -134,6 +135,7 @@ a:focus-visible {
   display: flex;
   align-items: center;        /* Vertically centres the content */
   border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-bg-alt);
 }
 .hero__inner {
   display: grid;
@@ -151,7 +153,7 @@ a:focus-visible {
   margin-top: 1rem;
   font-size: var(--text-hero-sub);
   font-weight: 500;
-  color: var(--color-text-muted);
+  color: var(--color-text-alt);
 }
 /* Right side: statement */
 .hero__statement {
@@ -161,7 +163,8 @@ a:focus-visible {
   line-height: 1.25;
   letter-spacing: -0.01em;
   padding-left: 2rem;
-  border-left: 2px solid var(--color-text); /* Vertical rule; delete to remove */
+  border-left: 2px solid var(--color-text-alt); /* Vertical rule; delete to remove */
+   color: var(--color-text-alt);
 }
 .word-creative {
   font-family: var(--font-special1);
