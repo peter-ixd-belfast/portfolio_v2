@@ -44,6 +44,7 @@
   --text-hero: clamp(2.75rem, 7vw, 5.5rem);   /* Your name */
   --text-hero-sub: clamp(1.125rem, 2vw, 1.5rem); /* Job title */
   --text-statement: clamp(1.5rem, 3vw, 2.5rem);  /* Right-side hero phrase */
+  --text-statement-special: clamp(1.75rem, 4vw, 2.75rem);  /* Creative and Complex*/
   --text-h2: clamp(1.75rem, 3.5vw, 2.5rem);   /* Section headings */
   --text-h3: 1.25rem;                         /* Card titles */
   --text-body: 1rem;                          /* Paragraphs */
@@ -159,6 +160,15 @@ a:focus-visible {
   letter-spacing: -0.01em;
   padding-left: 2rem;
   border-left: 2px solid var(--color-text); /* Vertical rule; delete to remove */
+}
+.word-creative {
+  font-family: 'Story-Script';
+font-size: var(--text-statement-special);
+}
+.word-complex {
+  font-family: "Turret-Road";
+  font-size: var(--text-statement-special);
+
 }
 /* --------------------------------------------------------------------------
    5. CARD GRID + CARDS
