@@ -41,7 +41,29 @@
       <!-- RIGHT SIDE: statement -->
       <div class="hero__right">
       <p class="hero__statement">Crafting <span class="word-creative">creative</span> solutions to <span class="word-complex">complex</span> user problems</p>
-      </div>
+    
+        <!-- STICKY NOTE + ARROW
+             The note links to the Projects section (#projects).
+             The arrow sits outside the note and draws itself on load. -->
+        <div class="hero-note">
+          <a class="sticky-note" href="#projects" aria-label="Scroll down to projects">
+            <span class="sticky-note__text">Projects this way</span> <!-- PLACEHOLDER copy -->
+          </a>
+
+          <!-- Hand-drawn arrow. Each stroke is its own path so they draw in
+               order. Edit the "d" values to change the arrow's shape. -->
+          <svg class="hero-arrow" viewBox="0 0 96 140" aria-hidden="true">
+            <!-- Shaft: leaves the note, loops once, then drops downward -->
+            <path class="hero-arrow__shaft" pathLength="1"
+                  d="M4 14 C 30 2, 66 10, 68 36 C 70 58, 40 64, 44 46 C 48 30, 76 42, 72 74 C 69 98, 58 114, 52 130" />
+            <!-- Left side of arrowhead -->
+            <path class="hero-arrow__head-1" pathLength="1" d="M37 115 C 42 120, 47 125, 52 131" />
+            <!-- Right side of arrowhead (slight overshoot for a freehand feel) -->
+            <path class="hero-arrow__head-2" pathLength="1" d="M67 117 C 62 121, 57 126, 51 133" />
+          </svg>
+        </div>  
+    
+    </div>
 
     </div>
   </header>
