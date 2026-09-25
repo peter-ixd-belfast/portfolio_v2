@@ -38,11 +38,14 @@
   --color-accent-contrast: #ffffff; /* Text shown on top of the accent colour */
   --color-footer-bg: #0F1B4D;     /* Footer background */
   --color-footer-text: #d4d4d8;   /* Footer text */
+  --color-note: #fde68a;          /* Sticky note paper colour */
+  --color-note-ink: #1f2937;      /* Handwriting + arrow colour */
   /* ---- Typography (PLACEHOLDERS) ---- */
   --font-heading: "Urbanist", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
    --font-special1: "Story Script", system-ui, -apple-system, "Segoe UI", sans-serif;
    --font-special2: "Turret Road", system-ui, -apple-system, "Segoe UI", sans-serif;
+   --font-hand: "Story Script", "Comic Sans MS", cursive; /* Sticky note handwriting */
   /* Fluid font sizes: clamp(min, preferred, max) scales with screen width */
   --text-hero: clamp(2.75rem, 7vw, 5.5rem);   /* Your name */ 
   --text-hero-sub: clamp(1.125rem, 2vw, 1.5rem); /* Job title */
@@ -240,7 +243,7 @@ font-size: var(--text-statement-special);
   height: 140px;
   margin-top: 3.5rem;         /* Starts roughly level with the note's middle */
   margin-left: -0.25rem;
-  color: var(--color-text);   /* Arrow ink colour */
+  color: var(--color-text-alt);   /* Arrow ink colour */
   overflow: visible;
   animation: arrow-nudge 1.6s ease-in-out 2.2s infinite; /* Starts after drawing */
 }
