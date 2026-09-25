@@ -369,6 +369,29 @@ font-size: var(--text-statement-special);
 .card__text {
   color: var(--color-text-muted);
 }
+/* SKILL TAGS
+   A horizontal row of small pills below the description. They sit side by
+   side and wrap onto a new line when they run out of room.
+   To add a tag in index.html, copy one <li class="tag">…</li> line. */
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;              /* Overflow onto the next line */
+  gap: 0.5rem;                  /* Space between tags */
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+.tag {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.5;
+  white-space: nowrap;          /* Keeps each tag on one line */
+  color: var(--color-text);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;         /* Pill shape — use var(--radius) for squarer tags */
+}
 /* "Read case study" prompt, pinned to the card bottom so cards align */
 .card__link-label {
   margin-top: auto;
@@ -488,6 +511,13 @@ font-size: var(--text-statement-special);
   .button { transition: none; }
   .card:hover,
   .card:focus-visible { transform: none; }
+  /* Show the arrow fully drawn, with no movement */
+  .hero-arrow { animation: none; }
+  .hero-arrow path,
+  .hero-arrow .hero-arrow__shaft,
+  .hero-arrow .hero-arrow__head-1,
+  .hero-arrow .hero-arrow__head-2 { animation: none; stroke-dashoffset: 0; opacity: 1; }
+  .sticky-note { transition: none; }
 }
 /* --------------------------------------------------------------------------
    10. RESPONSIVE BREAKPOINTS
