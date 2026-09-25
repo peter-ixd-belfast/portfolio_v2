@@ -148,6 +148,9 @@ a:focus-visible {
   font-size: var(--text-hero);
   font-weight: 700;
 }
+.hero__name{
+  color: var(--color-text-alt);
+}
 /* Left side: job title */
 .hero__title {
   margin-top: 1rem;
