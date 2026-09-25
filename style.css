@@ -17,7 +17,9 @@
    Replace this URL with any Google Fonts (or other) stylesheet link.
    Remember to update --font-heading and --font-body below to match.
    -------------------------------------------------------------------------- */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Story+Script&family=Turret+Road:wght@200;300;400;500;700;800&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 /* --------------------------------------------------------------------------
    1. DESIGN TOKENS (EDIT ME FIRST)
@@ -36,8 +38,8 @@
   --color-footer-bg: #18181b;     /* Footer background */
   --color-footer-text: #d4d4d8;   /* Footer text */
   /* ---- Typography (PLACEHOLDERS) ---- */
-  --font-heading: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-heading: "Urbanist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   /* Fluid font sizes: clamp(min, preferred, max) scales with screen width */
   --text-hero: clamp(2.75rem, 7vw, 5.5rem);   /* Your name */
   --text-hero-sub: clamp(1.125rem, 2vw, 1.5rem); /* Job title */
