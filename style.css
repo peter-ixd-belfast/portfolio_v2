@@ -387,7 +387,7 @@ font-size: var(--text-statement-special);
   font-weight: 500;
   line-height: 1.5;
   white-space: nowrap;          /* Keeps each tag on one line */
-  color: var(--color-text);
+  color: var(--color-text-alt);
   background: var(--color-bg-alt);
   border: 1px solid var(--color-border);
   border-radius: 999px;         /* Pill shape — use var(--radius) for squarer tags */
